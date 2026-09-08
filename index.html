@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Colori & Sorrisi | Mini Club Paint</title>
+
+  <meta name="description"
+        content="Colori & Sorrisi – Mini Club Paint. Kit creativi in gesso ceramico da dipingere, Fattoria Magica, Dino Land, collezioni stagionali, bomboniere e creazioni fatte a mano.">
+
+  <meta name="theme-color" content="#ff5f93">
+
+  <style>
+    :root{
+      --pink:#ff5f93;
+      --pink2:#ff88ad;
+      --yellow:#ffd447;
+      --green:#6ccf69;
+      --blue:#4fb7ff;
+      --purple:#a96ad6;
+      --orange:#ff8a3d;
+      --cream:#fffaf2;
+      --ink:#30283a;
+      --white:#ffffff;
+      --shadow:0 16px 40px rgba(69,43,72,.14);
+      --radius:28px;
+    }
+
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+      background:var(--cream);
+      color:var(--ink);
+      overflow-x:hidden;
+    }
+
+    a{
+      color:inherit;
+      text-decoration:none;
+    }
+
+    img{
+      max-width:100%;
+      display:block;
+    }
+
+    .wrap{
+      width:min(1120px,92%);
+      margin:auto;
+    }
+
+    /* NAV */
+
+    nav{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      background:rgba(255,250,242,.92);
+      backdrop-filter:blur(14px);
+      border-bottom:1px solid rgba(255,95,147,.12);
+    }
+
+    .nav-inner{
+      min-height:68px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+    }
+
+    .brand{
+      font-weight:900;
+      font-size:1.15rem;
+      white-space:nowrap;
+    }
+
+    .brand span:nth-child(1){color:var(--pink)}
+    .brand span:nth-child(2){color:var(--orange)}
+    .brand span:nth-child(3){color:var(--green)}
+    .brand span:nth-child(4){color:var(--blue)}
+
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:18px;
+      font-size:.92rem;
+      font-weight:700;
+    }
+
+    .nav-links a:hover{
+      color:var(--pink);
+    }
+
+    .nav-cta{
+      padding:11px 17px;
+      border-radius:999px;
+      color:white !important;
+      background:linear-gradient(135deg,var(--pink),var(--purple));
+      box-shadow:0 8px 20px rgba(255,95,147,.25);
+    }
+
+    /* HERO */
+
+    .hero{
+      position:relative;
+      min-height:760px;
+      display:flex;
+      align-items:center;
+      overflow:hidden;
+      background:
+        radial-gradient(circle at 12% 18%,rgba(255,212,71,.43),transparent 30%),
+        radial-gradient(circle at 90% 22%,rgba(79,183,255,.28),transparent 28%),
+        radial-gradient(circle at 70% 85%,rgba(169,106,214,.18),transparent 30%),
+        linear-gradient(150deg,#fff9ee 0%,#fff1f6 55%,#effaff 100%);
+    }
+
+    .hero::before{
+      content:"🌈";
+      position:absolute;
+      font-size:16rem;
+      opacity:.06;
+      right:-45px;
+      top:40px;
+      transform:rotate(7deg);
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:50px;
+      align-items:center;
+      padding:85px 0;
+    }
+
+    .mini-label{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:9px 15px;
+      background:white;
+      border-radius:999px;
+      box-shadow:var(--shadow);
+      font-size:.88rem;
+      font-weight:800;
+      margin-bottom:22px;
+    }
+
+    .hero h1{
+      font-size:clamp(3rem,8vw,6.3rem);
+      line-height:.92;
+      letter-spacing:-.06em;
+      margin-bottom:24px;
+    }
+
+    .rainbow-text{
+      background:
+        linear-gradient(
+          90deg,
+          var(--pink),
+          var(--orange),
+          #f6bf22,
+          var(--green),
+          var(--blue),
+          var(--purple)
+        );
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+    }
+
+    .hero h2{
+      font-size:clamp(1.35rem,3vw,2rem);
+      margin-bottom:16px;
+    }
+
+    .hero p{
+      max-width:620px;
+      font-size:1.08rem;
+      line-height:1.75;
+      color:#625b68;
+    }
+
+    .hero-buttons{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:30px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      min-height:52px;
+      padding:0 22px;
+      border-radius:999px;
+      font-weight:900;
+      transition:.25s ease;
+    }
+
+    .btn:hover{
+      transform:translateY(-3px);
+    }
+
+    .btn-primary{
+      color:white;
+      background:linear-gradient(135deg,var(--pink),var(--purple));
+      box-shadow:0 12px 25px rgba(255,95,147,.27);
+    }
+
+    .btn-light{
+      background:white;
+      box-shadow:var(--shadow);
+    }
+
+    .hero-art{
+      display:grid;
+      place-items:center;
+      position:relative;
+    }
+
+    .magic-card{
+      width:min(420px,100%);
+      aspect-ratio:1/1.08;
+      border-radius:48px;
+      background:white;
+      box-shadow:0 30px 80px rgba(77,48,86,.18);
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:36px;
+      position:relative;
+      transform:rotate(2deg);
+    }
+
+    .magic-card::before,
+    .magic-card::after{
+      content:"";
+      position:absolute;
+      border-radius:50%;
+      filter:blur(1px);
+    }
+
+    .magic-card::before{
+      width:90px;
+      height:90px;
+      background:#ffe2ed;
+      left:-24px;
+      top:45px;
+    }
+
+    .magic-card::after{
+      width:74px;
+      height:74px;
+      background:#dff7da;
+      right:-18px;
+      bottom:70px;
+    }
+
+    .magic-emoji{
+      font-size:8.5rem;
+      filter:drop-shadow(0 16px 15px rgba(0,0,0,.08));
+      position:relative;
+      z-index:2;
+    }
+
+    .magic-card h3{
+      font-size:1.7rem;
+      margin-top:20px;
+      position:relative;
+      z-index:2;
+    }
+
+    .magic-card p{
+      font-size:.95rem;
+      margin-top:8px;
+      position:relative;
+      z-index:2;
+    }
+
+    /* QUOTE */
+
+    .quote{
+      padding:35px 0;
+      background:white;
+      text-align:center;
+      border-top:1px solid #f4e8ec;
+      border-bottom:1px solid #f4e8ec;
+    }
+
+    .quote p{
+      font-size:clamp(1.25rem,3vw,1.9rem);
+      font-weight:900;
+    }
+
+    .quote strong{
+      color:var(--pink);
+    }
+
+    /* GENERIC */
+
+    section{
+      padding:90px 0;
+    }
+
+    .section-head{
+      text-align:center;
+      max-width:730px;
+      margin:0 auto 45px;
+    }
+
+    .eyebrow{
+      display:inline-block;
+      text-transform:uppercase;
+      letter-spacing:.13em;
+      font-size:.78rem;
+      font-weight:900;
+      color:var(--pink);
+      margin-bottom:12px;
+    }
+
+    .section-head h2{
+      font-size:clamp(2.2rem,5vw,3.7rem);
+      line-height:1.05;
+      margin-bottom:15px;
+    }
+
+    .section-head p{
+      color:#706976;
+      line-height:1.7;
+    }
+
+    /* KIT */
+
+    .kit{
+      background:#fff;
+    }
+
+    .kit-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:18px;
+    }
+
+    .kit-item{
+      border-radius:24px;
+      padding:28px 22px;
+      text-align:center;
+      background:var(--cream);
+      border:1px solid #f5e7df;
+    }
+
+    .kit-item .ico{
+      font-size:3rem;
+      margin-bottom:14px;
+    }
+
+    .kit-item h3{
+      margin-bottom:7px;
+    }
+
+    .kit-item p{
+      color:#756d79;
+      font-size:.92rem;
+      line-height:1.55;
+    }
+
+    /* COLLECTIONS */
+
+    .collections{
+      background:
+        linear-gradient(180deg,#fffaf2,#fff5f8);
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:24px;
+    }
+
+    .collection-card{
+      min-height:340px;
+      border-radius:34px;
+      padding:34px;
+      position:relative;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+      display:flex;
+      flex-direction:column;
+      justify-content:flex-end;
+      transition:.3s ease;
+    }
+
+    .collection-card:hover{
+      transform:translateY(-6px);
+    }
+
+    .collection-card .big{
+      position:absolute;
+      right:20px;
+      top:8px;
+      font-size:8rem;
+      opacity:.25;
+    }
+
+    .collection-card h3{
+      font-size:2.2rem;
+      margin-bottom:8px;
+    }
+
+    .collection-card p{
+      max-width:420px;
+      line-height:1.6;
+    }
+
+    .farm{
+      background:linear-gradient(145deg,#dff4c9,#fff4bd);
+    }
+
+    .dino{
+      background:linear-gradient(145deg,#c8f0b7,#bceafb);
+    }
+
+    .halloween{
+      background:linear-gradient(145deg,#ead7ff,#ffd5ac);
+    }
+
+    .season{
+      background:linear-gradient(145deg,#ffdbe8,#fff0bd);
+    }
+
+    .tag{
+      display:inline-block;
+      align-self:flex-start;
+      padding:8px 12px;
+      border-radius:999px;
+      font-size:.76rem;
+      font-weight:900;
+      background:rgba(255,255,255,.72);
+      margin-bottom:14px;
+    }
+
+    /* STORY */
+
+    .story{
+      background:#33283b;
+      color:white;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .story::after{
+      content:"🎨";
+      position:absolute;
+      font-size:20rem;
+      opacity:.045;
+      right:-40px;
+      bottom:-80px;
+    }
+
+    .story-box{
+      max-width:810px;
+      margin:auto;
+      text-align:center;
+      position:relative;
+      z-index:1;
+    }
+
+    .story-box h2{
+      font-size:clamp(2.5rem,6vw,4.5rem);
+      line-height:1;
+      margin-bottom:26px;
+    }
+
+    .story-box p{
+      font-size:1.12rem;
+      line-height:1.9;
+      color:#eee6f0;
+    }
+
+    .story-highlight{
+      display:block;
+      margin:32px auto 0;
+      color:#ffd2e1;
+      font-size:clamp(1.25rem,3vw,1.8rem);
+      font-weight:900;
+      max-width:700px;
+    }
+
+    /* MOMENTS */
+
+    .moments{
+      background:white;
+    }
+
+    .moment-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:20px;
+    }
+
+    .moment{
+      padding:30px;
+      border-radius:26px;
+      background:#fff8fb;
+      border:1px solid #f4e3eb;
+    }
+
+    .moment span{
+      font-size:2.5rem;
+    }
+
+    .moment h3{
+      margin:13px 0 8px;
+      font-size:1.3rem;
+    }
+
+    .moment p{
+      color:#716976;
+      line-height:1.6;
+    }
+
+    /* CONTACT */
+
+    .contact{
+      background:
+        radial-gradient(circle at top left,#ffe2ef,transparent 40%),
+        radial-gradient(circle at bottom right,#dff3ff,transparent 40%),
+        var(--cream);
+    }
+
+    .contact-card{
+      max-width:850px;
+      margin:auto;
+      border-radius:40px;
+      background:white;
+      padding:50px;
+      text-align:center;
+      box-shadow:var(--shadow);
+    }
+
+    .contact-card h2{
+      font-size:clamp(2.2rem,5vw,3.5rem);
+      margin-bottom:12px;
+    }
+
+    .contact-card p{
+      color:#6b6470;
+      line-height:1.7;
+    }
+
+    .contact-buttons{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:12px;
+      margin-top:28px;
+    }
+
+    .social{
+      padding:16px;
+      border-radius:18px;
+      font-weight:900;
+      background:#fff7fa;
+      border:1px solid #f3e3ea;
+    }
+
+    .social:hover{
+      background:#ffeaf2;
+    }
+
+    .whatsapp{
+      background:#eaffee;
+    }
+
+    /* FOOTER */
+
+    footer{
+      padding:38px 0;
+      text-align:center;
+      color:#756d79;
+      font-size:.9rem;
+      background:white;
+    }
+
+    footer strong{
+      color:var(--ink);
+    }
+
+    .rainbow-line{
+      height:7px;
+      background:
+        linear-gradient(
+          90deg,
+          var(--pink),
+          var(--orange),
+          var(--yellow),
+          var(--green),
+          var(--blue),
+          var(--purple)
+        );
+    }
+
+    /* MOBILE */
+
+    @media(max-width:850px){
+
+      .nav-links a:not(.nav-cta){
+        display:none;
+      }
+
+      .hero{
+        min-height:auto;
+      }
+
+      .hero-grid{
+        grid-template-columns:1fr;
+        text-align:center;
+        padding:65px 0 75px;
+      }
+
+      .hero p{
+        margin-inline:auto;
+      }
+
+      .hero-buttons{
+        justify-content:center;
+      }
+
+      .hero-art{
+        margin-top:10px;
+      }
+
+      .magic-card{
+        width:min(360px,92%);
+      }
+
+      .kit-grid{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .cards{
+        grid-template-columns:1fr;
+      }
+
+      .moment-grid{
+        grid-template-columns:1fr;
+      }
+
+      .contact-buttons{
+        grid-template-columns:1fr;
+      }
+
+      .contact-card{
+        padding:36px 22px;
+      }
+    }
+
+    @media(max-width:520px){
+
+      .hero h1{
+        font-size:3.55rem;
+      }
+
+      .hero-buttons .btn{
+        width:100%;
+      }
+
+      .kit-grid{
+        grid-template-columns:1fr;
+      }
+
+      section{
+        padding:68px 0;
+      }
+
+      .collection-card{
+        min-height:300px;
+        padding:28px;
+      }
+
+      .collection-card .big{
+        font-size:6.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="rainbow-line"></div>
+
+  <nav>
+    <div class="wrap nav-inner">
+
+      <a class="brand" href="#home">
+        <span>Colori</span>
+        <span>&</span>
+        <span>Sorrisi</span>
+        <span>🌈</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="#kit">Mini Club Paint</a>
+        <a href="#collezioni">Collezioni</a>
+        <a href="#storia">La nostra storia</a>
+        <a href="#contatti" class="nav-cta">Contattaci</a>
+      </div>
+
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- HERO -->
+
+    <section class="hero" id="home">
+      <div class="wrap hero-grid">
+
+        <div>
+          <div class="mini-label">
+            🎨 Mini Club Paint · Fatto a mano
+          </div>
+
+          <h1>
+            <span class="rainbow-text">Colori<br>& Sorrisi</span>
+          </h1>
+
+          <h2>Piccole mani, grandi creazioni.</h2>
+
+          <p>
+            Piccoli mondi in gesso ceramico che aspettano soltanto
+            una cosa: la fantasia di un bambino.
+            Dipingi, crea, inventa e trasforma ogni personaggio
+            nella tua storia.
+          </p>
+
+          <div class="hero-buttons">
+            <a class="btn btn-primary" href="#collezioni">
+              🌈 Scopri le collezioni
+            </a>
+
+            <a class="btn btn-light"
+               href="https://wa.me/393896425600"
+               target="_blank"
+               rel="noopener">
+              💬 Scrivici su WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-art">
+          <div class="magic-card">
+            <div class="magic-emoji">🎨🦖</div>
+            <h3>Il mondo lo colori tu.</h3>
+            <p>
+              Nessuna regola. Nessun colore giusto o sbagliato.
+              Solo fantasia.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FRASE BRAND -->
+
+    <div class="quote">
+      <div class="wrap">
+        <p>
+          Dove noi vediamo bianco,
+          <strong>loro vedono infinite possibilità.</strong>
+        </p>
+      </div>
+    </div>
+
+    <!-- KIT -->
+
+    <section class="kit" id="kit">
+      <div class="wrap">
+
+        <div class="section-head">
+          <span class="eyebrow">Mini Club Paint</span>
+          <h2>Apri. Dipingi. Crea. 💕</h2>
+          <p>
+            Un piccolo kit pensato per trasformare un momento
+            creativo in una vera avventura.
+          </p>
+        </div>
+
+        <div class="kit-grid">
+
+          <div class="kit-item">
+            <div class="ico">🤍</div>
+            <h3>1 Figura</h3>
+            <p>
+              Una figura realizzata in gesso ceramico,
+              pronta per essere trasformata.
+            </p>
+          </div>
+
+          <div class="kit-item">
+            <div class="ico">🎨</div>
+            <h3>3 Colori</h3>
+            <p>
+              Tre colori acrilici per iniziare subito
+              a dare vita alla creazione.
+            </p>
+          </div>
+
+          <div class="kit-item">
+            <div class="ico">🖌️</div>
+            <h3>1 Pennello</h3>
+            <p>
+              Tutto quello che serve per iniziare
+              la piccola missione artistica.
+            </p>
+          </div>
+
+          <div class="kit-item">
+            <div class="ico">✨</div>
+            <h3>Fantasia infinita</h3>
+            <p>
+              Perché un dinosauro verde è bello.
+              Ma viola a pois? Ancora meglio.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- COLLEZIONI -->
+
+    <section class="collections" id="collezioni">
+      <div class="wrap">
+
+        <div class="section-head">
+          <span class="eyebrow">Esplora il nostro mondo</span>
+          <h2>Quale avventura scegli oggi?</h2>
+          <p>
+            Collezioni create per giocare, dipingere,
+            inventare storie e custodire piccoli ricordi.
+          </p>
+        </div>
+
+        <div class="cards">
+
+          <article class="collection-card farm">
+            <div class="big">🐮</div>
+            <span class="tag">COLLEZIONE</span>
+            <h3>Fattoria Magica</h3>
+            <p>
+              Mucca Mirtilla, Maialino Otto, Pecorella Nuvola
+              e tanti altri amici aspettano di prendere colore.
+            </p>
+          </article>
+
+          <article class="collection-card dino">
+            <div class="big">🦖</div>
+            <span class="tag">NEW</span>
+            <h3>Dino Land</h3>
+            <p>
+              Piccoli artisti in un grande mondo.
+              Dinosauri in gesso ceramico, colori e tanta fantasia.
+            </p>
+          </article>
+
+          <article class="collection-card halloween">
+            <div class="big">👻</div>
+            <span class="tag">LIMITED EDITION</span>
+            <h3>Halloween</h3>
+            <p>
+              Fantasmi, zucche e scheletrini:
+              una collezione da paura… ma con il sorriso.
+            </p>
+          </article>
+
+          <article class="collection-card season">
+            <div class="big">🦄</div>
+            <span class="tag">E TANTO ALTRO</span>
+            <h3>Altre avventure</h3>
+            <p>
+              Unicorni, mare, spazio, estate
+              e nuove collezioni che continuano a nascere.
+            </p>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- STORIA -->
+
+    <section class="story" id="storia">
+      <div class="wrap">
+
+        <div class="story-box">
+          <span class="eyebrow" style="color:#ffc8dc">
+            La nostra storia
+          </span>
+
+          <h2>Prima delle parole c’erano già i colori.</h2>
+
+          <p>
+            Prima ancora di saper dire “mamma”,
+            un bambino può fermarsi davanti a un colore
+            e sorridere.
+            È da un pensiero così semplice che nasce
+            Colori & Sorrisi.
+            Creiamo piccole forme bianche perché non vogliamo
+            decidere noi il colore del loro mondo.
+          </p>
+
+          <span class="story-highlight">
+            “Gli diamo qualcosa di bianco.
+            Il resto lo decide la loro fantasia.”
+          </span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- OCCASIONI -->
+
+    <section class="moments">
+      <div class="wrap">
+
+        <div class="section-head">
+          <span class="eyebrow">Non solo Mini Club Paint</span>
+          <h2>Per ogni occasione, un piccolo sorriso.</h2>
+        </div>
+
+        <div class="moment-grid">
+
+          <div class="moment">
+            <span>🌼</span>
+            <h3>Bomboniere</h3>
+            <p>
+              Piccole creazioni personalizzabili
+              per rendere speciale un giorno importante.
+            </p>
+          </div>
+
+          <div class="moment">
+            <span>🎁</span>
+            <h3>Idee regalo</h3>
+            <p>
+              Creazioni fatte a mano,
+              pensate per regalare qualcosa di diverso.
+            </p>
+          </div>
+
+          <div class="moment">
+            <span>🕯️</span>
+            <h3>Home & Fragrance</h3>
+            <p>
+              Decorazioni e creazioni profumate
+              per dare un piccolo tocco speciale ai tuoi spazi.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CONTATTI -->
+
+    <section class="contact" id="contatti">
+      <div class="wrap">
+
+        <div class="contact-card">
+
+          <span class="eyebrow">Parliamo</span>
+
+          <h2>Hai già scelto il tuo mondo? 🌈</h2>
+
+          <p>
+            Per informazioni, ordini, kit personalizzati,
+            bomboniere o idee regalo puoi contattarci direttamente.
+          </p>
+
+          <div class="contact-buttons">
+
+            <a class="social whatsapp"
+               href="https://wa.me/393896425600"
+               target="_blank"
+               rel="noopener">
+              💚 WhatsApp<br>
+              389 642 5600
+            </a>
+
+            <a class="social"
+               href="https://www.instagram.com/_fantasia_di_gesso1/"
+               target="_blank"
+               rel="noopener">
+              📸 Instagram<br>
+              @_fantasia_di_gesso1
+            </a>
+
+            <a class="social"
+               href="https://www.tiktok.com/@colorisorrisi"
+               target="_blank"
+               rel="noopener">
+              🎵 TikTok<br>
+              @colorisorrisi
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <strong>Colori & Sorrisi · Mini Club Paint</strong><br>
+      Piccole mani, grandi creazioni ❤️<br><br>
+      <span id="year"></span> · coloriesorrisi.it
+    </div>
+  </footer>
+
+  <div class="rainbow-line"></div>
+
+  <script>
+    document.getElementById("year").textContent =
+      "© " + new Date().getFullYear();
+  </script>
+
+</body>
+</html>
