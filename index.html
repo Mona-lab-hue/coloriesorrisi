@@ -1053,10 +1053,21 @@
   </footer>
 
   <div class="rainbow-line"></div>
-
+<div id="dinoModal" style="display:none;position:fixed;inset:0;background:#fffdf8;z-index:9999;padding:30px;">
+  <button onclick="closeDino()">✕</button>
+  <h2>🦖 Dino Land</h2>
+  <p>Un nuovo mondo sta per nascere. Dinosauri in gesso ceramico da dipingere, collezionare e trasformare con la fantasia.</p>
+</div>
   <script>
     document.getElementById("year").textContent =
       "© " + new Date().getFullYear();
+    function openDino(){
+  document.getElementById("dinoModal").style.display="block";
+}
+
+function closeDino(){
+  document.getElementById("dinoModal").style.display="none";
+}
   </script>
 
 </body>
