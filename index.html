@@ -617,7 +617,140 @@
           var(--purple)
         );
     }
+/* CREA IL TUO KIT */
 
+.builder{
+  padding:80px 20px;
+  background:#fffaf2;
+}
+
+.builder-inner{
+  width:min(1100px,92%);
+  margin:0 auto;
+  text-align:center;
+}
+
+.builder-eyebrow{
+  display:block;
+  color:var(--pink);
+  font-weight:900;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  margin-bottom:12px;
+}
+
+.builder h2{
+  font-size:clamp(2.6rem,7vw,5rem);
+  line-height:1;
+  margin:0 0 20px;
+  color:var(--ink);
+}
+
+.builder-sub{
+  max-width:700px;
+  margin:0 auto 45px;
+  color:#756d79;
+  font-size:1.15rem;
+  line-height:1.7;
+}
+
+.builder-card{
+  max-width:900px;
+  margin:0 auto;
+  padding:38px;
+  background:white;
+  border:1px solid #f3e3ea;
+  border-radius:32px;
+  box-shadow:var(--shadow);
+  text-align:left;
+}
+
+.builder-steps{
+  display:flex;
+  gap:10px;
+  margin-bottom:28px;
+}
+
+.step-dot{
+  width:42px;
+  height:42px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  background:#fff0f5;
+  color:var(--pink);
+  font-weight:900;
+}
+
+.step-dot:first-child{
+  background:var(--pink);
+  color:white;
+}
+
+.builder-mini{
+  display:block;
+  color:var(--pink);
+  font-size:.85rem;
+  font-weight:900;
+  letter-spacing:2px;
+  margin-bottom:8px;
+}
+
+.builder-content h3{
+  font-size:clamp(1.7rem,4vw,2.5rem);
+  margin:0 0 10px;
+  color:var(--ink);
+}
+
+.builder-content p{
+  color:#6b6470;
+  line-height:1.6;
+  margin-bottom:25px;
+}
+
+.builder-choices{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+}
+
+.builder-choices button{
+  border:1px solid #f0dce5;
+  background:#fff7fa;
+  padding:16px 12px;
+  border-radius:18px;
+  font:inherit;
+  font-weight:800;
+  color:var(--ink);
+  cursor:pointer;
+  transition:.2s ease;
+}
+
+.builder-choices button:hover{
+  transform:translateY(-3px);
+  background:#ffeaf2;
+  border-color:var(--pink);
+}
+
+@media(max-width:700px){
+  .builder{
+    padding:65px 16px;
+  }
+
+  .builder-card{
+    padding:24px 18px;
+    border-radius:25px;
+  }
+
+  .builder-choices{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .builder-choices button{
+    padding:14px 8px;
+    font-size:.92rem;
+  }
+}
     /* MOBILE */
 
     @media(max-width:850px){
