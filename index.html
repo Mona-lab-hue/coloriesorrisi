@@ -1039,7 +1039,7 @@ Colora, inventa e trasformalo nella tua storia.
 
         <div class="cards">
 
-          <article class="collection-card farm">
+          <article class="collection-card farm" onclick="openFattoria()" style="cursor:pointer;">
             <div class="big">🐮</div>
             <span class="tag">COLLEZIONE</span>
             <h3>Fattoria Magica</h3>
@@ -1273,9 +1273,49 @@ Colora, inventa e trasformalo nella tua storia.
     <img src="Halloween 21.jpg.PNG" style="width:100%;border-radius:18px;">
   </div>
 </div>
+ 
+  <!-- FATTORIA MAGICA MODAL -->
+<div id="fattoriaModal" style="display:none;position:fixed;inset:0;background:white;z-index:9999;overflow-y:auto;padding:25px;">
+  
+  <button onclick="closeFattoria()" style="position:fixed;top:18px;right:18px;z-index:10000;font-size:28px;border:0;background:white;border-radius:50%;width:48px;height:48px;box-shadow:0 4px 18px #0002;cursor:pointer;">×</button>
+
+  <h2 style="text-align:center;">🐮 Fattoria Magica</h2>
+
+  <p style="text-align:center;max-width:650px;margin:0 auto 25px;">
+    Benvenuti nella Fattoria Magica 🌾
+    13 piccoli amici in gesso ceramico aspettano solo di prendere colore.
+  </p>
+
+  <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:12px;max-width:900px;margin:auto;">
+    <img src="fattoria-01.jpg.PNG" alt="Mucca Mirtilla" style="width:100%;border-radius:18px;">
+    <img src="fattoria-02.jpg.PNG" alt="Maialino Otto" style="width:100%;border-radius:18px;">
+    <img src="fattoria-03.jpg.PNG" alt="Pecorella Nuvola" style="width:100%;border-radius:18px;">
+    <img src="fattoria-04.jpg.PNG" alt="Gallina Cocò" style="width:100%;border-radius:18px;">
+    <img src="fattoria-05.jpg.PNG" alt="Paperella Splash" style="width:100%;border-radius:18px;">
+    <img src="fattoria-06.jpg.PNG" alt="Coniglio Bianchino" style="width:100%;border-radius:18px;">
+    <img src="fattoria-07.jpg.PNG" alt="Cavallo Fulmine" style="width:100%;border-radius:18px;">
+    <img src="fattoria-08.jpg.PNG" alt="Trattore Rosso" style="width:100%;border-radius:18px;">
+    <img src="fattoria-09.jpg.PNG" alt="Cane Basso" style="width:100%;border-radius:18px;">
+    <img src="fattoria-10.jpg.PNG" alt="Gatta Chiatta" style="width:100%;border-radius:18px;">
+    <img src="fattoria-11.jpg.PNG" alt="Capretta Lanetta" style="width:100%;border-radius:18px;">
+    <img src="fattoria-12.jpg.PNG" alt="Contadino Gino" style="width:100%;border-radius:18px;">
+    <img src="fattoria-13.jpg.PNG" alt="Gallo Rik" style="width:100%;border-radius:18px;">
+  </div>
+
+</div>
   <script>
     document.getElementById("year").textContent =
       "© " + new Date().getFullYear();
+   
+    function openFattoria(){
+  document.getElementById("fattoriaModal").style.display="block";
+  document.body.style.overflow="hidden";
+}
+
+function closeFattoria(){
+  document.getElementById("fattoriaModal").style.display="none";
+  document.body.style.overflow="";
+}
     function openDino(){
   document.getElementById("dinoModal").style.display="block";
 }
