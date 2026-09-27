@@ -1068,7 +1068,7 @@ Colora, inventa e trasformalo nella tua storia.
           
 
 
-          <article class="collection-card halloween">
+          <article class="collection-card halloween" onclick="openHalloween()" style="cursor:pointer;">
             <div class="big">👻</div>
             <span class="tag">LIMITED EDITION</span>
             <h3>Halloween</h3>
@@ -1242,6 +1242,37 @@ Colora, inventa e trasformalo nella tua storia.
  <img src="dino-07.jpg.PNG" alt="Dino Land 07">
 </div>
 </div>
+  <!-- HALLOWEEN MODAL -->
+<div id="halloweenModal" style="display:none;position:fixed;inset:0;background:#fffaf2;z-index:9999;overflow-y:auto;padding:48px 24px;">
+  <button onclick="closeHalloween()" style="position:absolute;top:22px;right:22px;width:52px;height:52px;border:0;border-radius:50%;background:white;font-size:30px;">×</button>
+
+  <h2>🎃 Halloween</h2>
+  <p>Benvenuti a Boo Town 👻 Dove anche i mostri sono spaventosamente buoni!</p>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:22px;">
+    <img src="Halloween 1.jpg.PNG" style="width:100%;border-radius:18px;">
+    <img src="Halloween 2.jpg.PNG" style="width:100%;border-radius:18px;">
+    <img src="Halloween 3.jpg.PNG" style="width:100%;border-radius:18px;">
+    <img src="Halloween 4.jpg.PNG" style="width:100%;border-radius:18px;">
+    <img src="Halloween 5.jpg.PNG" style="width:100%;border-radius:18px;">
+    <img src="Halloween 6.jpg.PNG" style="width:100%;border-radius:18px;">
+    <img src="Halloween 7.jpg.PNG" style="width:100%;border-radius:18px;">
+    <img src="Halloween 8.jpg.PNG" style="width:100%;border-radius:18px;">
+    <img src="Halloween 9.jpg.PNG" style="width:100%;border-radius:18px;">
+    <img src="Halloween 10.jpg.PNG" style="width:100%;border-radius:18px;">
+    <img src="Halloween 11.jpg.PNG" style="width:100%;border-radius:18px;">
+    <img src="Halloween 12.jpg.PNG" style="width:100%;border-radius:18px;">
+    <img src="Halloween 13.jpg.PNG" style="width:100%;border-radius:18px;">
+    <img src="Halloween 14.jpg.PNG" style="width:100%;border-radius:18px;">
+    <img src="Halloween 15.jpg.PNG" style="width:100%;border-radius:18px;">
+    <img src="Halloween 16.jpg.PNG" style="width:100%;border-radius:18px;">
+    <img src="Halloween 17.jpg.PNG" style="width:100%;border-radius:18px;">
+    <img src="Halloween 18.jpg.PNG" style="width:100%;border-radius:18px;">
+    <img src="Halloween 19.jpg.PNG" style="width:100%;border-radius:18px;">
+    <img src="Halloween 20.jpg.PNG" style="width:100%;border-radius:18px;">
+    <img src="Halloween 21.jpg.PNG" style="width:100%;border-radius:18px;">
+  </div>
+</div>
   <script>
     document.getElementById("year").textContent =
       "© " + new Date().getFullYear();
@@ -1251,6 +1282,14 @@ Colora, inventa e trasformalo nella tua storia.
 
 function closeDino(){
   document.getElementById("dinoModal").style.display="none";
+}
+
+    function openHalloween(){
+  document.getElementById("halloweenModal").style.display="block";
+}
+
+function closeHalloween(){
+  document.getElementById("halloweenModal").style.display="none";
 }
   </script>
 
