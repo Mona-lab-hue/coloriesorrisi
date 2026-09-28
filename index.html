@@ -944,23 +944,37 @@ Colora, inventa e trasformalo nella tua storia.
         <span class="step-dot">4</span>
       </div>
 
-      <div class="builder-content">
-        <span class="builder-mini">PASSO 1 DI 4</span>
+     <div class="builder-content" id="builderContent">
 
-        <h3>Scegli la tua avventura 🪄</h3>
+  <span class="builder-mini" id="builderMini">PASSO 1 DI 4</span>
 
-        <p>
-          Da dove vuoi cominciare?
-          Il tuo Kit Colori &amp; Sorrisi nasce da qui.
-        </p>
+  <h3 id="builderTitle">Scegli la tua avventura 🪄</h3>
 
-        <div class="builder-choices">
-          <button type="button">🐮 Fattoria Magica</button>
-          <button type="button">🦖 Dino Land</button>
-          <button type="button">🎃 Boo Town</button>
-          <button type="button">✨ Sorpresa!</button>
-        </div>
-      </div>
+  <p id="builderText">
+    Da dove vuoi cominciare? Il tuo Kit Colori &amp; Sorrisi nasce da qui.
+  </p>
+
+  <div class="builder-choices" id="builderChoices">
+
+    <button type="button" onclick="scegliMondo('fattoria')">
+      🐮 Fattoria Magica
+    </button>
+
+    <button type="button" onclick="scegliMondo('dino')">
+      🦖 Dino Land
+    </button>
+
+    <button type="button" onclick="scegliMondo('boo')">
+      🎃 Boo Town
+    </button>
+
+    <button type="button" onclick="scegliMondo('sorpresa')">
+      ✨ Sorprendimi!
+    </button>
+
+  </div>
+
+</div>
 
     </div>
 
@@ -1340,6 +1354,194 @@ function closeHalloween(){
   document.getElementById("halloweenModal").style.display="none";
 }
   </script>
+<script>
+const mondiKit = {
+  fattoria: {
+    nome: "Fattoria Magica 🐮",
+    personaggi: [
+      "Mucca Mirtilla",
+      "Maialino Otto",
+      "Pecorella Nuvola",
+      "Gallina Cocò",
+      "Paperella Splash",
+      "Coniglio Bianchino",
+      "Cavallo Fulmine",
+      "Trattore Rosso",
+      "Cane Basso",
+      "Gatta Chiatta",
+      "Capretta Lanetta",
+      "👨‍🌾 Contadino Gino",
+      "⭐ Gallo Rik"
+    ]
+  },
 
+  dino: {
+    nome: "Dino Land 🦖",
+    personaggi: [
+      "🦖 T-Rex",
+      "🦕 Brontosauro",
+      "🦖 Triceratopo",
+      "🥚 Dino Sorpresa"
+    ]
+  },
+
+  boo: {
+    nome: "Boo Town 🎃",
+    personaggi: [
+      "👻 Fantasma",
+      "🎃 Zucca",
+      "💀 Scheletro",
+      "🏚️ Casa Stregata"
+    ]
+  }
+};
+
+let kitScelto = {
+  mondo: "",
+  personaggio: "",
+  colori: []
+};
+
+function aggiornaPasso(numero) {
+  const dots = document.querySelectorAll("#crea-kit .step-dot");
+  const barra = document.querySelector("#crea-kit .builder-progress-bar");
+
+  dots.forEach((dot, index) => {
+    dot.classList.toggle("active", index < numero);
+  });
+
+  if (barra) {
+    barra.style.width = (numero * 25) + "%";
+  }
+}
+
+function scegliMondo(mondo) {
+
+  if (mondo === "sorpresa") {
+    const scelte = ["fattoria", "dino", "boo"];
+    mondo = scelte[Math.floor(Math.random() * scelte.length)];
+  }
+
+  kitScelto.mondo = mondo;
+
+  const dati = mondiKit[mondo];
+
+  document.getElementById("builderMini").textContent = "PASSO 2 DI 4";
+  document.getElementById("builderTitle").innerHTML =
+    "Scegli il tuo personaggio ✨";
+
+  document.getElementById("builderText").innerHTML =
+    "Hai scelto <strong>" + dati.nome +
+    "</strong>. Adesso scegli chi entrerà nel tuo kit.";
+
+  document.getElementById("builderChoices").innerHTML =
+    dati.personaggi.map(personaggio =>
+      `<button type="button"
+       onclick="scegliPersonaggio('${personaggio.replace(/'/g, "\\'")}')">
+       ${personaggio}
+       </button>`
+    ).join("");
+
+  aggiornaPasso(2);
+}
+
+function scegliPersonaggio(personaggio) {
+
+  kitScelto.personaggio = personaggio;
+
+  document.getElementById("builderMini").textContent = "PASSO 3 DI 4";
+  document.getElementById("builderTitle").innerHTML =
+    "Scegli i tuoi 3 colori 🎨";
+
+  document.getElementById("builderText").innerHTML =
+    "Ora diamo colore a <strong>" + personaggio +
+    "</strong>. Scegli tre colori.";
+
+  const colori = [
+    "🔴 Rosso",
+    "🟠 Arancione",
+    "🟡 Giallo",
+    "🟢 Verde",
+    "🔵 Blu",
+    "🟣 Viola",
+    "🩷 Rosa",
+    "🤎 Marrone"
+  ];
+
+  document.getElementById("builderChoices").innerHTML =
+    colori.map(colore =>
+      `<button type="button"
+       onclick="scegliColore(this,'${colore}')">
+       ${colore}
+       </button>`
+    ).join("");
+
+  aggiornaPasso(3);
+}
+
+function scegliColore(bottone, colore) {
+
+  if (kitScelto.colori.includes(colore)) {
+    kitScelto.colori =
+      kitScelto.colori.filter(c => c !== colore);
+
+    bottone.style.background = "";
+    return;
+  }
+
+  if (kitScelto.colori.length >= 3) return;
+
+  kitScelto.colori.push(colore);
+  bottone.style.background = "#ffe1ed";
+
+  if (kitScelto.colori.length === 3) {
+    setTimeout(mostraKit, 350);
+  }
+}
+
+function mostraKit() {
+
+  document.getElementById("builderMini").textContent = "PASSO 4 DI 4";
+
+  document.getElementById("builderTitle").innerHTML =
+    "✨ Il tuo Mini Club Paint è pronto!";
+
+  document.getElementById("builderText").innerHTML =
+    "<strong>" + kitScelto.personaggio + "</strong><br>" +
+    "🎨 " + kitScelto.colori.join(" · ") +
+    "<br><br>Hai appena creato il tuo piccolo mondo.";
+
+  const messaggio = encodeURIComponent(
+    "Ciao Colori & Sorrisi! 🌈 Vorrei questo Mini Club Paint: " +
+    kitScelto.personaggio +
+    " con i colori " +
+    kitScelto.colori.join(", ")
+  );
+
+  document.getElementById("builderChoices").innerHTML =
+    `<a href="https://wa.me/393896425600?text=${messaggio}"
+        style="
+        display:block;
+        width:100%;
+        padding:18px;
+        border-radius:999px;
+        background:linear-gradient(90deg,#ff5f93,#b95ce5);
+        color:white;
+        font-weight:900;
+        text-decoration:none;
+        text-align:center;
+        box-sizing:border-box;">
+        💚 ORDINA IL MIO KIT
+     </a>
+
+     <button type="button"
+       onclick="location.reload()"
+       style="margin-top:12px;">
+       ↻ Crea un altro Kit
+     </button>`;
+
+  aggiornaPasso(4);
+}
+</script>
 </body>
 </html>
