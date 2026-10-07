@@ -914,6 +914,133 @@
     padding:11px 13px;
     font-size:14px;
   }
+  /* ===== MINI CLUB PAINT - VERSIONE COMPATTA ===== */
+
+.kit-fast{
+  padding:55px 20px;
+  background:linear-gradient(180deg,#fff 0%,#fff8f3 100%);
+  text-align:center;
+}
+
+.kit-fast-head{
+  max-width:700px;
+  margin:0 auto 28px;
+}
+
+.kit-fast-head .eyebrow{
+  display:block;
+  color:#f05a91;
+  font-size:14px;
+  font-weight:800;
+  letter-spacing:3px;
+  margin-bottom:10px;
+}
+
+.kit-fast-head h2{
+  font-size:clamp(30px,7vw,48px);
+  line-height:1.05;
+  margin:0 0 14px;
+  color:#2d2638;
+}
+
+.kit-fast-head p{
+  color:#706a76;
+  font-size:17px;
+  line-height:1.6;
+  margin:0;
+}
+
+.kit-contents{
+  max-width:650px;
+  margin:25px auto 22px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+}
+
+.kit-contents > div{
+  background:#fff;
+  border:1px solid #f4dfd7;
+  border-radius:22px;
+  padding:18px 8px;
+  box-shadow:0 8px 25px rgba(75,45,65,.06);
+}
+
+.kit-contents span{
+  display:block;
+  font-size:30px;
+  margin-bottom:7px;
+}
+
+.kit-contents strong{
+  display:block;
+  font-size:14px;
+  color:#30283a;
+}
+
+.kit-line{
+  font-size:18px;
+  line-height:1.5;
+  color:#625b68;
+  margin:20px auto;
+}
+
+.kit-line strong{
+  color:#ef3f91;
+}
+
+.kit-real-photo{
+  max-width:650px;
+  margin:22px auto;
+  border-radius:30px;
+  overflow:hidden;
+  box-shadow:0 18px 45px rgba(71,44,64,.15);
+}
+
+.kit-real-photo img{
+  display:block;
+  width:100%;
+  height:auto;
+}
+
+.kit-main-cta{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  max-width:650px;
+  margin:22px auto 0;
+  padding:18px 25px;
+  border-radius:999px;
+  background:linear-gradient(90deg,#ff3f91,#c94ddd);
+  color:white;
+  font-size:19px;
+  font-weight:900;
+  text-decoration:none;
+  box-shadow:0 12px 30px rgba(239,63,145,.25);
+}
+
+@media(max-width:480px){
+  .kit-fast{
+    padding:42px 16px;
+  }
+
+  .kit-contents{
+    gap:7px;
+  }
+
+  .kit-contents > div{
+    padding:15px 5px;
+    border-radius:18px;
+  }
+
+  .kit-contents span{
+    font-size:26px;
+  }
+
+  .kit-contents strong{
+    font-size:12px;
+  }
+}
 } </style>
 </head>
 
@@ -1069,61 +1196,54 @@ Colora, inventa e trasformalo nella tua storia.
 </section>
     <!-- KIT -->
 
-    <section class="kit" id="kit">
-      <div class="wrap">
+  <section class="kit-fast" id="kit">
 
-        <div class="section-head">
-          <span class="eyebrow">Mini Club Paint</span>
-          <h2>Apri. Dipingi. Crea. 💕</h2>
-          <p>
-            Un piccolo kit pensato per trasformare un momento
-            creativo in una vera avventura.
-          </p>
-        </div>
+  <div class="kit-fast-head">
+    <span class="eyebrow">MINI CLUB PAINT</span>
 
-        <div class="kit-grid">
+    <h2>Tutto quello che serve<br>per creare. 🎨</h2>
 
-          <div class="kit-item">
-            <div class="ico">🤍</div>
-            <h3>1 Figura</h3>
-            <p>
-              Una figura realizzata in gesso ceramico,
-              pronta per essere trasformata.
-            </p>
-          </div>
+    <p>
+      Un piccolo kit, una grande avventura.<br>
+      Apri, dipingi e crea il tuo mondo.
+    </p>
+  </div>
 
-          <div class="kit-item">
-            <div class="ico">🎨</div>
-            <h3>3 Colori</h3>
-            <p>
-              Tre colori acrilici per iniziare subito
-              a dare vita alla creazione.
-            </p>
-          </div>
+  <div class="kit-contents">
 
-          <div class="kit-item">
-            <div class="ico">🖌️</div>
-            <h3>1 Pennello</h3>
-            <p>
-              Tutto quello che serve per iniziare
-              la piccola missione artistica.
-            </p>
-          </div>
+    <div>
+      <span>🤍</span>
+      <strong>1 Figura</strong>
+    </div>
 
-          <div class="kit-item">
-            <div class="ico">✨</div>
-            <h3>Fantasia infinita</h3>
-            <p>
-              Perché un dinosauro verde è bello.
-              Ma viola a pois? Ancora meglio.
-            </p>
-          </div>
+    <div>
+      <span>🎨</span>
+      <strong>3 Colori</strong>
+    </div>
 
-        </div>
+    <div>
+      <span>🖌️</span>
+      <strong>1 Pennello</strong>
+    </div>
 
-      </div>
-    </section>
+  </div>
 
+  <p class="kit-line">
+    Scegli il tuo mondo.<br>
+    <strong>Al resto pensa la fantasia. ✨</strong>
+  </p>
+
+  <div class="kit-real-photo">
+    <img
+     src="mini-club-paint.jpg.PNG"
+      alt="Colori & Sorrisi Mini Club Paint">
+  </div>
+
+  <a class="kit-main-cta" href="#collections">
+    🎨 Crea il tuo Kit <span>›</span>
+  </a>
+
+</section>
     <!-- COLLEZIONI -->
 
     <section class="collections" id="collezioni">
