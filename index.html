@@ -833,29 +833,116 @@
         font-size:6.5rem;
       }
     }
-  </style>
+ /* ===== HEADER PRO COLORI & SORRISI ===== */
+
+.pro-nav{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(255,250,246,.96);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+  border-bottom:1px solid rgba(255,95,147,.14);
+  box-shadow:0 8px 30px rgba(68,35,74,.08);
+}
+
+.pro-nav-inner{
+  min-height:92px;
+  display:grid;
+  grid-template-columns:1fr auto 1fr;
+  align-items:center;
+  gap:12px;
+}
+
+.menu-btn{
+  justify-self:start;
+  width:48px;
+  height:48px;
+  border:0;
+  border-radius:50%;
+  background:linear-gradient(135deg,#ff5f93,#e933a7);
+  color:white;
+  font-size:25px;
+  font-weight:900;
+  cursor:pointer;
+  box-shadow:0 8px 22px rgba(255,95,147,.28);
+}
+
+.pro-logo{
+  justify-self:center;
+  display:block;
+}
+
+.pro-logo img{
+  width:220px;
+  max-height:82px;
+  object-fit:contain;
+  display:block;
+}
+
+.pro-contact{
+  justify-self:end;
+  text-decoration:none;
+  background:linear-gradient(135deg,#ff5f93,#b94ee8);
+  color:white;
+  font-weight:900;
+  padding:13px 19px;
+  border-radius:999px;
+  box-shadow:0 8px 22px rgba(255,95,147,.25);
+  white-space:nowrap;
+}
+
+@media(max-width:600px){
+  .pro-nav-inner{
+    width:96%;
+    min-height:84px;
+    gap:7px;
+  }
+
+  .menu-btn{
+    width:43px;
+    height:43px;
+    font-size:22px;
+  }
+
+  .pro-logo img{
+    width:175px;
+    max-height:72px;
+  }
+
+  .pro-contact{
+    padding:11px 13px;
+    font-size:14px;
+  }
+} </style>
 </head>
 
 <body>
 
   <div class="rainbow-line"></div>
 
-  <nav>
-    <div class="wrap nav-inner">
+ <nav class="pro-nav">
+  <div class="wrap pro-nav-inner">
 
-      <a class="brand" href="#home">
-  <img src="B23703CB-6F26-44E5-95BB-72CBF7C9AB83.png" alt="Colori & Sorrisi" style="height:65px;width:auto;display:block;">
-</a>
+    <button class="menu-btn" type="button" onclick="openMenu()" aria-label="Apri menu">
+      ☰
+    </button>
 
-      <div class="nav-links">
-        <a href="#kit">Mini Club Paint</a>
-        <a href="#collezioni">Collezioni</a>
-        <a href="#storia">La nostra storia</a>
-        <a href="#contatti" class="nav-cta">Contattaci</a>
-      </div>
+    <a class="pro-logo" href="#home">
+      <img
+        src="B23703CB-6F26-44E5-95BB-72CBF7C9AB83.png"
+        alt="Colori & Sorrisi – Mini Club Painting">
+    </a>
 
-    </div>
-  </nav>
+    <a class="pro-contact"
+       href="https://wa.me/393896425600"
+       target="_blank"
+       rel="noopener">
+      💬 Contattaci
+    </a>
+
+  </div>
+</nav>
 
   <main>
 
