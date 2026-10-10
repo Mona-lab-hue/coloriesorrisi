@@ -1811,5 +1811,50 @@ function mostraKit() {
   aggiornaPasso(4);
 }
 </script>
+  <script>
+function openMenu() {
+  let menu = document.getElementById("menuMagico");
+
+  if (!menu) {
+    menu = document.createElement("div");
+    menu.id = "menuMagico";
+
+    menu.innerHTML = `
+      <a href="#home">🏠 Home</a>
+      <a href="#crea-kit">🎨 Crea il tuo Kit</a>
+      <a href="#collezioni">🦄 Collezioni</a>
+      <a href="https://wa.me/393896425600">💬 Contattaci</a>
+    `;
+
+    Object.assign(menu.style, {
+      position: "fixed",
+      top: "95px",
+      left: "15px",
+      right: "15px",
+      padding: "22px",
+      background: "#fffaf2",
+      borderRadius: "20px",
+      boxShadow: "0 12px 35px #0003",
+      zIndex: "99999",
+      display: "grid",
+      gap: "18px"
+    });
+
+    document.body.appendChild(menu);
+
+    menu.querySelectorAll("a").forEach(link => {
+      link.style.color = "#e83e8c";
+      link.style.fontWeight = "bold";
+      link.style.textDecoration = "none";
+      link.addEventListener("click", () => {
+        menu.style.display = "none";
+      });
+    });
+  } else {
+    menu.style.display =
+      menu.style.display === "none" ? "grid" : "none";
+  }
+}
+</script>
 </body>
 </html>
